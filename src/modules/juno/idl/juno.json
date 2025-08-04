@@ -1,0 +1,233 @@
+{
+  "version": "0.1.0",
+  "name": "juno",
+  "instructions": [
+    {
+      "name": "sendPost",
+      "accounts": [
+        {
+          "name": "post",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "author",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "walletCollector",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "hashtag",
+          "type": "string"
+        },
+        {
+          "name": "content",
+          "type": "string"
+        },
+        {
+          "name": "url",
+          "type": "string"
+        },
+        {
+          "name": "tip",
+          "type": "string"
+        },
+        {
+          "name": "timeZone",
+          "type": "i8"
+        },
+        {
+          "name": "year",
+          "type": "u8"
+        },
+        {
+          "name": "month",
+          "type": "u8"
+        },
+        {
+          "name": "day",
+          "type": "u8"
+        },
+        {
+          "name": "hour",
+          "type": "u8"
+        },
+        {
+          "name": "minutes",
+          "type": "u8"
+        },
+        {
+          "name": "seconds",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "editPost",
+      "accounts": [
+        {
+          "name": "post",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "author",
+          "isMut": false,
+          "isSigner": true
+        }
+      ],
+      "args": [
+        {
+          "name": "hashtag",
+          "type": "string"
+        },
+        {
+          "name": "content",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "likePost",
+      "accounts": [
+        {
+          "name": "post",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "author",
+          "isMut": false,
+          "isSigner": true
+        },
+        {
+          "name": "to",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "tip",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "deletePost",
+      "accounts": [
+        {
+          "name": "post",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "author",
+          "isMut": false,
+          "isSigner": true
+        }
+      ],
+      "args": []
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Post",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "author",
+            "type": "publicKey"
+          },
+          {
+            "name": "timeZone",
+            "type": "i8"
+          },
+          {
+            "name": "year",
+            "type": "u8"
+          },
+          {
+            "name": "month",
+            "type": "u8"
+          },
+          {
+            "name": "day",
+            "type": "u8"
+          },
+          {
+            "name": "hour",
+            "type": "u8"
+          },
+          {
+            "name": "minutes",
+            "type": "u8"
+          },
+          {
+            "name": "seconds",
+            "type": "u8"
+          },
+          {
+            "name": "like",
+            "type": "u64"
+          },
+          {
+            "name": "hashtag",
+            "type": "string"
+          },
+          {
+            "name": "content",
+            "type": "string"
+          },
+          {
+            "name": "url",
+            "type": "string"
+          },
+          {
+            "name": "likes",
+            "type": {
+              "vec": "publicKey"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "HashtagTooLong",
+      "msg": "Hashtag should be 22 characters."
+    },
+    {
+      "code": 6001,
+      "name": "ContentTooLong",
+      "msg": "Content should be 280 characters."
+    },
+    {
+      "code": 6002,
+      "name": "UrlTooLong",
+      "msg": "Url should be 90 characters."
+    }
+  ],
+  "metadata": {
+    "address": "2whHgHvjnQuVSsu3VzmFG4V5xdA8mniDCLASuzXjKAqh"
+  }
+}
