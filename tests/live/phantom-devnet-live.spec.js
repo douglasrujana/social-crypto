@@ -2,28 +2,28 @@ import { test, expect } from '@playwright/test';
 
 /**
  * LIVE TEST - Real Phantom Wallet Connection with Solana Devnet
- * 
+ *
  * CATEGORÍA: Test en Vivo (Live Test / Real Environment Test)
  * PROPÓSITO: Probar la conexión real con Phantom wallet y la red Solana Devnet
- * 
+ *
  * QUÉ PRUEBA:
  * - Conexión real con extensión Phantom instalada
  * - Comunicación real con la red Solana Devnet
  * - Manejo de transacciones reales (sin costo en devnet)
  * - Comportamiento con datos reales de blockchain
- * 
+ *
  * POR QUÉ ES IMPORTANTE:
  * - Valida que la app funciona con la infraestructura real
  * - Detecta problemas de red, latencia y timeouts
  * - Verifica compatibilidad con versiones actuales de Phantom
  * - Asegura que las transacciones se procesan correctamente
- * 
+ *
  * REQUISITOS CRÍTICOS:
  * - ⚠️  Extensión Phantom REAL instalada en el navegador
  * - ⚠️  Wallet configurada con al menos una cuenta
  * - ⚠️  Conexión a internet estable
  * - ⚠️  Acceso a Solana Devnet
- * 
+ *
  * CONFIGURACIÓN PREVIA:
  * 1. Instalar Phantom desde Chrome Web Store
  * 2. Crear/importar una wallet de prueba
