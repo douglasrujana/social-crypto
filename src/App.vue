@@ -8,8 +8,7 @@
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-        >
+          data-bs-target="#navbarSupportedContent">
           <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -27,12 +26,12 @@
           </ul>
           
           <div class="d-flex">
+            <!-- Botón conectar wallet -->
             <button 
               class="btn" 
               :class="walletConnected ? 'btn-success' : 'btn-primary'" 
               data-testid="wallet-button"
-              @click="connectWallet"
-            >
+              @click="connectWallet">
               {{ walletConnected ? `Connected: ${walletAddress?.slice(0,4)}...${walletAddress?.slice(-4)}` : 'Connect Wallet' }}
             </button>
           </div>
