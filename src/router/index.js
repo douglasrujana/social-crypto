@@ -7,12 +7,14 @@ const routes = [
     path: '/',
     name: 'Home',
     // Componente lazy-loaded, renderizado solo cuando se accede a la ruta
+    // Carga la vista HomeView.vue
     component: () => import('../views/HomeView.vue')
   },
   {
     path: '/courses',
     name: 'Courses',
     // Componente lazy-loaded, renderizado solo cuando se accede a la ruta
+    // Carga la vista CoursesView.vue
     component: () => import('../views/CoursesView.vue')
   },
   {
